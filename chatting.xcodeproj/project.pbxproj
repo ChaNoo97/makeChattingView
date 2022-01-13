@@ -19,6 +19,8 @@
 		FE87E931278D98AC007A9981 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E930278D98AC007A9981 /* BaseViewController.swift */; };
 		FE87E933278D9966007A9981 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E932278D9966007A9981 /* BaseView.swift */; };
 		FE87E935278DA255007A9981 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E934278DA255007A9981 /* TableViewCellExtension.swift */; };
+		FE87E94527900AB7007A9981 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94427900AB7007A9981 /* Observable.swift */; };
+		FE87E94727900B52007A9981 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94627900B52007A9981 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FE87E930278D98AC007A9981 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FE87E932278D9966007A9981 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FE87E934278DA255007A9981 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
+		FE87E94427900AB7007A9981 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FE87E94627900B52007A9981 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				FE87E913278D9750007A9981 /* AppDelegate.swift */,
 				FE87E915278D9750007A9981 /* SceneDelegate.swift */,
 				FE87E917278D9750007A9981 /* MainViewController.swift */,
+				FE87E94627900B52007A9981 /* MainModel.swift */,
 				FE87E927278D9837007A9981 /* MyTableCell.swift */,
 				FE87E929278D983F007A9981 /* YourTableCell.swift */,
 				FE87E92E278D9891007A9981 /* MainView.swift */,
@@ -80,6 +85,7 @@
 				FE87E91C278D9751007A9981 /* Assets.xcassets */,
 				FE87E91E278D9751007A9981 /* LaunchScreen.storyboard */,
 				FE87E921278D9751007A9981 /* Info.plist */,
+				FE87E94427900AB7007A9981 /* Observable.swift */,
 			);
 			path = chatting;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 				FE87E935278DA255007A9981 /* TableViewCellExtension.swift in Sources */,
 				FE87E918278D9750007A9981 /* MainViewController.swift in Sources */,
 				FE87E914278D9750007A9981 /* AppDelegate.swift in Sources */,
+				FE87E94527900AB7007A9981 /* Observable.swift in Sources */,
+				FE87E94727900B52007A9981 /* MainModel.swift in Sources */,
 				FE87E928278D9837007A9981 /* MyTableCell.swift in Sources */,
 				FE87E931278D98AC007A9981 /* BaseViewController.swift in Sources */,
 				FE87E916278D9750007A9981 /* SceneDelegate.swift in Sources */,

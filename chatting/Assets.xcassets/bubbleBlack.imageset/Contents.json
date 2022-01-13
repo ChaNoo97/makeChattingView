@@ -8,11 +8,39 @@
     {
       "filename" : "chat_bubble_you_dark2@2x.png",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 49,
+          "left" : 31,
+          "right" : 33,
+          "top" : 26
+        },
+        "center" : {
+          "height" : 1,
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "9-part"
+      },
       "scale" : "2x"
     },
     {
       "filename" : "chat_bubble_you_dark2@3x.png",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 75,
+          "left" : 0,
+          "right" : 50,
+          "top" : 33
+        },
+        "center" : {
+          "height" : 1,
+          "mode" : "tile",
+          "width" : 44
+        },
+        "mode" : "9-part"
+      },
       "scale" : "3x"
     }
   ],
