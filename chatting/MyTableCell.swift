@@ -11,7 +11,7 @@ import SnapKit
 class MyTableCell: UITableViewCell {
 	
 	let bubbleImageView = UIImageView()
-	let chatContent = UILabel()
+	let myChatContent = UILabel()
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: .default, reuseIdentifier: MyTableCell.reuseIdentifier)
@@ -26,8 +26,7 @@ class MyTableCell: UITableViewCell {
 	}
 	
 	func configure() {
-		chatContent.text = "가"
-		chatContent.numberOfLines = 0
+		myChatContent.numberOfLines = 0
 //		bubbleImageView.image = UIImage(named: "bubbleBlack")
 		bubbleImageView.image = UIImage(named: "bubbleWhite")?.resizableImage(withCapInsets: UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20))
 		bubbleImageView.contentMode = .scaleToFill
@@ -38,7 +37,7 @@ class MyTableCell: UITableViewCell {
 	}
 	
 	func makeConstraints() {
-		[bubbleImageView, chatContent].forEach {
+		[bubbleImageView, myChatContent].forEach {
 			contentView.addSubview($0)
 		}
 		
@@ -48,7 +47,7 @@ class MyTableCell: UITableViewCell {
 //			$0.trailing.equalTo(contentView).inset(100)
 		}
 		
-		chatContent.snp.makeConstraints {
+		myChatContent.snp.makeConstraints {
 			$0.leading.trailing.top.equalTo(bubbleImageView).inset(20)
 			$0.bottom.equalTo(bubbleImageView.snp.bottom).inset(30)
 		}

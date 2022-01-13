@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct MyChat {
+struct Chat {
 	let chat: String
 	let date: Date
+	let mine: Bool
 }
 
-typealias MyChats = [MyChat]
+typealias Chats = [Chat]
+

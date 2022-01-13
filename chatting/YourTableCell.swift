@@ -11,7 +11,7 @@ import SnapKit
 class YourTableCell: UITableViewCell {
 	
 	let bubbleImageView = UIImageView()
-	let chatContent = UILabel()
+	let yourChatContent = UILabel()
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: .default, reuseIdentifier: YourTableCell.reuseIdentifier)
@@ -26,8 +26,7 @@ class YourTableCell: UITableViewCell {
 	}
 	
 	func configure() {
-		chatContent.text = "가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사"
-		chatContent.numberOfLines = 0
+		yourChatContent.numberOfLines = 0
 //		bubbleImageView.image = UIImage(named: "bubbleBlack")
 		bubbleImageView.image = UIImage(named: "bubbleBlack")?.resizableImage(withCapInsets: UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20))
 		bubbleImageView.contentMode = .scaleToFill
@@ -38,7 +37,7 @@ class YourTableCell: UITableViewCell {
 	}
 	
 	func makeConstraints() {
-		[bubbleImageView, chatContent].forEach {
+		[bubbleImageView, yourChatContent].forEach {
 			contentView.addSubview($0)
 		}
 		
@@ -48,7 +47,7 @@ class YourTableCell: UITableViewCell {
 //			$0.trailing.equalTo(contentView).inset(100)
 		}
 		
-		chatContent.snp.makeConstraints {
+		yourChatContent.snp.makeConstraints {
 			$0.leading.trailing.top.equalTo(bubbleImageView).inset(20)
 			$0.bottom.equalTo(bubbleImageView.snp.bottom).inset(30)
 		}

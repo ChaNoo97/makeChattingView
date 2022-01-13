@@ -69,7 +69,8 @@ class MainView: BaseView {
 		textView.snp.makeConstraints {
 			$0.leading.equalTo(yourSendButton.snp.trailing).offset(8)
 			$0.trailing.equalTo(mySendButton.snp.leading).offset(-8)
-			$0.bottom.top.equalTo(chattingView).inset(8) //height = 44
+			$0.bottom.top.equalTo(chattingView).inset(8)
+			$0.height.equalTo(44)
 		}
 		
 	}

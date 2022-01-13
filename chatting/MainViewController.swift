@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: BaseViewController {
 	
 	let mainView = MainView()
+	let viewModel = MainViewModel()
 	
 	override func loadView() {
 		self.view = mainView
@@ -17,6 +18,9 @@ class MainViewController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		mainView.textView.delegate = self
+		mainView.textView.font = .systemFont(ofSize: 20)
 		
 		mainView.mainTableView.delegate = self
 		mainView.mainTableView.dataSource = self
@@ -26,30 +30,64 @@ class MainViewController: BaseViewController {
 		
 		mainView.mainTableView.rowHeight = UITableView.automaticDimension
 		mainView.mainTableView.estimatedRowHeight = UITableView.automaticDimension
+		
+		mainView.mySendButton.addTarget(self, action: #selector(mySendButtonClicked), for: .touchUpInside)
+		mainView.yourSendButton.addTarget(self, action: #selector(yourSendButtonClicked), for: .touchUpInside)
 	}
-
+	
+	@objc func mySendButtonClicked() {
+		print(#function)
+		viewModel.mySendButtonClicked(message: mainView.textView.text!)
+		mainView.mainTableView.reloadData()
+	}
+	
+	@objc func yourSendButtonClicked() {
+		viewModel.yourSendButtonClicked(message: mainView.textView.text!)
+		mainView.mainTableView.reloadData()
+	}
 
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return viewModel.chats.value.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell1 = mainView.mainTableView.dequeueReusableCell(withIdentifier: YourTableCell.reuseIdentifier, for: indexPath)
-		let cell2 = mainView.mainTableView.dequeueReusableCell(withIdentifier: MyTableCell.reuseIdentifier, for: indexPath)
+		let cell1 = mainView.mainTableView.dequeueReusableCell(withIdentifier: YourTableCell.reuseIdentifier, for: indexPath) as! YourTableCell
+		let cell2 = mainView.mainTableView.dequeueReusableCell(withIdentifier: MyTableCell.reuseIdentifier, for: indexPath) as! MyTableCell
+		 
+		let row = viewModel.chats.value[indexPath.row]
 		
-		let row = indexPath.row
-		if row%2 == 0 {
-			return cell1
-		} else {
+		if row.mine {
+			cell2.myChatContent.text = row.chat
 			return cell2
+		} else {
+			cell1.yourChatContent.text = row.chat
+			return cell1
 		}
-	
 	}
-	
-	
+}
+
+extension MainViewController: UITextViewDelegate {
+	func textViewDidChange(_ textView: UITextView) {
+		let contentHeight = textView.contentSize.height
+		DispatchQueue.main.async {
+			if contentHeight <= 60 {
+				self.mainView.textView.snp.updateConstraints {
+					$0.height.equalTo(44)
+				}
+			} else if contentHeight >= 102 {
+				self.mainView.textView.snp.updateConstraints {
+					$0.height.equalTo(102)
+				}
+			} else {
+				self.mainView.textView.snp.updateConstraints {
+					$0.height.equalTo(contentHeight)
+				}
+			}
+		}
+	}
 }
 

@@ -21,6 +21,7 @@
 		FE87E935278DA255007A9981 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E934278DA255007A9981 /* TableViewCellExtension.swift */; };
 		FE87E94527900AB7007A9981 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94427900AB7007A9981 /* Observable.swift */; };
 		FE87E94727900B52007A9981 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94627900B52007A9981 /* MainModel.swift */; };
+		FE87E94927900F5E007A9981 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94827900F5E007A9981 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FE87E934278DA255007A9981 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
 		FE87E94427900AB7007A9981 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FE87E94627900B52007A9981 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		FE87E94827900F5E007A9981 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				FE87E915278D9750007A9981 /* SceneDelegate.swift */,
 				FE87E917278D9750007A9981 /* MainViewController.swift */,
 				FE87E94627900B52007A9981 /* MainModel.swift */,
+				FE87E94827900F5E007A9981 /* MainViewModel.swift */,
 				FE87E927278D9837007A9981 /* MyTableCell.swift */,
 				FE87E929278D983F007A9981 /* YourTableCell.swift */,
 				FE87E92E278D9891007A9981 /* MainView.swift */,
@@ -177,6 +180,7 @@
 				FE87E931278D98AC007A9981 /* BaseViewController.swift in Sources */,
 				FE87E916278D9750007A9981 /* SceneDelegate.swift in Sources */,
 				FE87E933278D9966007A9981 /* BaseView.swift in Sources */,
+				FE87E94927900F5E007A9981 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
