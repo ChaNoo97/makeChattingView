@@ -15,6 +15,7 @@ class MainView: BaseView {
 	let textView = UITextView()
 	let mySendButton = UIButton()
 	let yourSendButton = UIButton()
+	let footerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -26,10 +27,8 @@ class MainView: BaseView {
 	}
 	
 	override func configure() {
-		
-		mainTableView.backgroundColor = .cyan
 		mainTableView.separatorStyle = .none
-		
+
 		chattingView.backgroundColor = .magenta
 		
 		yourSendButton.backgroundColor = .purple
@@ -48,7 +47,8 @@ class MainView: BaseView {
 		}
 		
 		mainTableView.snp.makeConstraints {
-			$0.edges.equalTo(self.safeAreaLayoutGuide)
+			$0.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+			$0.bottom.equalTo(chattingView.snp.top)
 		}
 		
 		chattingView.snp.makeConstraints {

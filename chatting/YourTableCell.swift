@@ -26,6 +26,7 @@ class YourTableCell: UITableViewCell {
 	}
 	
 	func configure() {
+		contentView.backgroundColor = .lightGray
 		yourChatContent.numberOfLines = 0
 //		bubbleImageView.image = UIImage(named: "bubbleBlack")
 		bubbleImageView.image = UIImage(named: "bubbleBlack")?.resizableImage(withCapInsets: UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20))

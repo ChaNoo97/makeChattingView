@@ -31,8 +31,17 @@ class MainViewController: BaseViewController {
 		mainView.mainTableView.rowHeight = UITableView.automaticDimension
 		mainView.mainTableView.estimatedRowHeight = UITableView.automaticDimension
 		
+		mainView.mainTableView.tableFooterView = mainView.footerView
+		
 		mainView.mySendButton.addTarget(self, action: #selector(mySendButtonClicked), for: .touchUpInside)
 		mainView.yourSendButton.addTarget(self, action: #selector(yourSendButtonClicked), for: .touchUpInside)
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+		
+		let tab = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
+		mainView.mainTableView.addGestureRecognizer(tab)
+		
 	}
 	
 	@objc func mySendButtonClicked() {
@@ -44,6 +53,28 @@ class MainViewController: BaseViewController {
 	@objc func yourSendButtonClicked() {
 		viewModel.yourSendButtonClicked(message: mainView.textView.text!)
 		mainView.mainTableView.reloadData()
+	}
+	
+	@objc func keyboardShow(notification: NSNotification) {
+		print(#function)
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			print(keyboardSize.height)
+			print(self.mainView.chattingView.frame.origin.y)
+			self.mainView.chattingView.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height+view.safeAreaInsets.bottom)
+			self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: keyboardSize.height+60-view.safeAreaInsets.bottom)
+			mainView.mainTableView.tableFooterView = mainView.footerView
+		}
+	}
+	
+	@objc func keyboardHide(notification: NSNotification) {
+		print(#function)
+		self.mainView.chattingView.transform = .identity
+		self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
+		mainView.mainTableView.tableFooterView = mainView.footerView
+	}
+	
+	@objc func keyboardDismiss() {
+		mainView.textView.endEditing(true)
 	}
 
 }

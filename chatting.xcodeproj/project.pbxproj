@@ -22,6 +22,13 @@
 		FE87E94527900AB7007A9981 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94427900AB7007A9981 /* Observable.swift */; };
 		FE87E94727900B52007A9981 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94627900B52007A9981 /* MainModel.swift */; };
 		FE87E94927900F5E007A9981 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E94827900F5E007A9981 /* MainViewModel.swift */; };
+		FE87E94C2790F98E007A9981 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = FE87E94B2790F98E007A9981 /* SocketIO */; };
+		FE87E94F2790F9B8007A9981 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE87E94E2790F9B8007A9981 /* Alamofire */; };
+		FE87E9512790FD83007A9981 /* SocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E9502790FD83007A9981 /* SocketViewController.swift */; };
+		FE87E9532790FFD8007A9981 /* SocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E9522790FFD8007A9981 /* SocketModel.swift */; };
+		FE87E9552791070A007A9981 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E9542791070A007A9981 /* SocketIOManager.swift */; };
+		FE87E957279107B7007A9981 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E956279107B7007A9981 /* Private.swift */; };
+		FE87E95927910A6F007A9981 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E95827910A6F007A9981 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +48,11 @@
 		FE87E94427900AB7007A9981 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FE87E94627900B52007A9981 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		FE87E94827900F5E007A9981 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FE87E9502790FD83007A9981 /* SocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewController.swift; sourceTree = "<group>"; };
+		FE87E9522790FFD8007A9981 /* SocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketModel.swift; sourceTree = "<group>"; };
+		FE87E9542791070A007A9981 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		FE87E956279107B7007A9981 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
+		FE87E95827910A6F007A9981 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE87E94F2790F9B8007A9981 /* Alamofire in Frameworks */,
 				FE87E92D278D985E007A9981 /* SnapKit in Frameworks */,
+				FE87E94C2790F98E007A9981 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +91,11 @@
 				FE87E913278D9750007A9981 /* AppDelegate.swift */,
 				FE87E915278D9750007A9981 /* SceneDelegate.swift */,
 				FE87E917278D9750007A9981 /* MainViewController.swift */,
+				FE87E9502790FD83007A9981 /* SocketViewController.swift */,
+				FE87E95827910A6F007A9981 /* StartViewController.swift */,
+				FE87E9542791070A007A9981 /* SocketIOManager.swift */,
+				FE87E956279107B7007A9981 /* Private.swift */,
+				FE87E9522790FFD8007A9981 /* SocketModel.swift */,
 				FE87E94627900B52007A9981 /* MainModel.swift */,
 				FE87E94827900F5E007A9981 /* MainViewModel.swift */,
 				FE87E927278D9837007A9981 /* MyTableCell.swift */,
@@ -111,6 +130,8 @@
 			name = chatting;
 			packageProductDependencies = (
 				FE87E92C278D985E007A9981 /* SnapKit */,
+				FE87E94B2790F98E007A9981 /* SocketIO */,
+				FE87E94E2790F9B8007A9981 /* Alamofire */,
 			);
 			productName = chatting;
 			productReference = FE87E910278D9750007A9981 /* chatting.app */;
@@ -142,6 +163,8 @@
 			mainGroup = FE87E907278D9750007A9981;
 			packageReferences = (
 				FE87E92B278D985E007A9981 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FE87E94A2790F98E007A9981 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+				FE87E94D2790F9B8007A9981 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FE87E911278D9750007A9981 /* Products */;
 			projectDirPath = "";
@@ -175,10 +198,15 @@
 				FE87E918278D9750007A9981 /* MainViewController.swift in Sources */,
 				FE87E914278D9750007A9981 /* AppDelegate.swift in Sources */,
 				FE87E94527900AB7007A9981 /* Observable.swift in Sources */,
+				FE87E9532790FFD8007A9981 /* SocketModel.swift in Sources */,
+				FE87E957279107B7007A9981 /* Private.swift in Sources */,
 				FE87E94727900B52007A9981 /* MainModel.swift in Sources */,
 				FE87E928278D9837007A9981 /* MyTableCell.swift in Sources */,
+				FE87E95927910A6F007A9981 /* StartViewController.swift in Sources */,
 				FE87E931278D98AC007A9981 /* BaseViewController.swift in Sources */,
+				FE87E9552791070A007A9981 /* SocketIOManager.swift in Sources */,
 				FE87E916278D9750007A9981 /* SceneDelegate.swift in Sources */,
+				FE87E9512790FD83007A9981 /* SocketViewController.swift in Sources */,
 				FE87E933278D9966007A9981 /* BaseView.swift in Sources */,
 				FE87E94927900F5E007A9981 /* MainViewModel.swift in Sources */,
 			);
@@ -400,6 +428,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FE87E94A2790F98E007A9981 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 16.0.1;
+			};
+		};
+		FE87E94D2790F9B8007A9981 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -407,6 +451,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE87E92B278D985E007A9981 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FE87E94B2790F98E007A9981 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE87E94A2790F98E007A9981 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+		FE87E94E2790F9B8007A9981 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE87E94D2790F9B8007A9981 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
