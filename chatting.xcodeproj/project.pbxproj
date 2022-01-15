@@ -69,6 +69,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE26BC952792CED600E92519 /* SoketChatting */ = {
+			isa = PBXGroup;
+			children = (
+				FE87E95827910A6F007A9981 /* StartViewController.swift */,
+				FE87E913278D9750007A9981 /* AppDelegate.swift */,
+				FE87E9522790FFD8007A9981 /* SocketModel.swift */,
+				FE87E9542791070A007A9981 /* SocketIOManager.swift */,
+				FE87E956279107B7007A9981 /* Private.swift */,
+				FE87E9502790FD83007A9981 /* SocketViewController.swift */,
+			);
+			path = SoketChatting;
+			sourceTree = "<group>";
+		};
+		FE26BC962792CEFC00E92519 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FE87E930278D98AC007A9981 /* BaseViewController.swift */,
+				FE87E932278D9966007A9981 /* BaseView.swift */,
+				FE87E934278DA255007A9981 /* TableViewCellExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FE87E907278D9750007A9981 = {
 			isa = PBXGroup;
 			children = (
@@ -88,22 +111,15 @@
 		FE87E912278D9750007A9981 /* chatting */ = {
 			isa = PBXGroup;
 			children = (
-				FE87E913278D9750007A9981 /* AppDelegate.swift */,
 				FE87E915278D9750007A9981 /* SceneDelegate.swift */,
 				FE87E917278D9750007A9981 /* MainViewController.swift */,
-				FE87E9502790FD83007A9981 /* SocketViewController.swift */,
-				FE87E95827910A6F007A9981 /* StartViewController.swift */,
-				FE87E9542791070A007A9981 /* SocketIOManager.swift */,
-				FE87E956279107B7007A9981 /* Private.swift */,
-				FE87E9522790FFD8007A9981 /* SocketModel.swift */,
 				FE87E94627900B52007A9981 /* MainModel.swift */,
 				FE87E94827900F5E007A9981 /* MainViewModel.swift */,
 				FE87E927278D9837007A9981 /* MyTableCell.swift */,
 				FE87E929278D983F007A9981 /* YourTableCell.swift */,
 				FE87E92E278D9891007A9981 /* MainView.swift */,
-				FE87E930278D98AC007A9981 /* BaseViewController.swift */,
-				FE87E932278D9966007A9981 /* BaseView.swift */,
-				FE87E934278DA255007A9981 /* TableViewCellExtension.swift */,
+				FE26BC952792CED600E92519 /* SoketChatting */,
+				FE26BC962792CEFC00E92519 /* Helper */,
 				FE87E91C278D9751007A9981 /* Assets.xcassets */,
 				FE87E91E278D9751007A9981 /* LaunchScreen.storyboard */,
 				FE87E921278D9751007A9981 /* Info.plist */,

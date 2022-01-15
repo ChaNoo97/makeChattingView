@@ -18,7 +18,6 @@ class MainViewController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		mainView.textView.delegate = self
 		mainView.textView.font = .systemFont(ofSize: 20)
 		
@@ -31,7 +30,7 @@ class MainViewController: BaseViewController {
 		mainView.mainTableView.rowHeight = UITableView.automaticDimension
 		mainView.mainTableView.estimatedRowHeight = UITableView.automaticDimension
 		
-		mainView.mainTableView.tableFooterView = mainView.footerView
+//		mainView.mainTableView.tableFooterView = mainView.footerView
 		
 		mainView.mySendButton.addTarget(self, action: #selector(mySendButtonClicked), for: .touchUpInside)
 		mainView.yourSendButton.addTarget(self, action: #selector(yourSendButtonClicked), for: .touchUpInside)
@@ -58,19 +57,26 @@ class MainViewController: BaseViewController {
 	@objc func keyboardShow(notification: NSNotification) {
 		print(#function)
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
 			print(keyboardSize.height)
 			print(self.mainView.chattingView.frame.origin.y)
-			self.mainView.chattingView.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height+view.safeAreaInsets.bottom)
-			self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: keyboardSize.height+60-view.safeAreaInsets.bottom)
-			mainView.mainTableView.tableFooterView = mainView.footerView
+//			if view.frame.origin.y == 0 {
+//				view.frame.origin.y -= keyboardHeight
+//			}
+//			self.mainView.frame.origin.y += (keyboardSize.height + view.safeAreaInsets.bottom)
+			self.mainView.bottomView.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height+view.safeAreaInsets.bottom)
+//			+view.safeAreaInsets.bottom
+//			self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: keyboardSize.height+60-view.safeAreaInsets.bottom)
+//			mainView.mainTableView.tableFooterView = mainView.footerView
 		}
 	}
 	
 	@objc func keyboardHide(notification: NSNotification) {
 		print(#function)
-		self.mainView.chattingView.transform = .identity
-		self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
-		mainView.mainTableView.tableFooterView = mainView.footerView
+//		view.frame.origin.y = 0
+		self.mainView.bottomView.transform = .identity
+//		self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
+//		mainView.mainTableView.tableFooterView = mainView.footerView
 	}
 	
 	@objc func keyboardDismiss() {
