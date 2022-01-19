@@ -28,58 +28,50 @@ class MainView: BaseView {
 	}
 	
 	override func configure() {
-		bottomView.backgroundColor = .black
-//		footerView.backgroundColor = .red
 		mainTableView.separatorStyle = .none
-		mainTableView.backgroundColor = .blue
 
-		chattingView.backgroundColor = .magenta
+		chattingView.backgroundColor = .lightGray
 		
-		yourSendButton.backgroundColor = .purple
-		yourSendButton.setImage(UIImage(named: "bubbleBlack"), for: .normal)
-		mySendButton.backgroundColor = .green
-		mySendButton.setImage(UIImage(named: "bubbleWhite"), for: .normal)
+		yourSendButton.backgroundColor = .lightGray
+		yourSendButton.setImage(UIImage(named: "btnBlack"), for: .normal)
+		mySendButton.backgroundColor = .lightGray
+		mySendButton.setImage(UIImage(named: "btnWhite"), for: .normal)
 	}
 	
 	override func makeConstraint() {
-		[mainTableView,bottomView].forEach {
+		[mainTableView, chattingView].forEach {
 			addSubview($0)
 		}
 		
-		[chattingView,textView, mySendButton, yourSendButton].forEach {
-			bottomView.addSubview($0)
+		[textView, mySendButton, yourSendButton].forEach {
+			chattingView.addSubview($0)
 		}
 		
 		mainTableView.snp.makeConstraints {
-//			$0.top.leading.trailing.equalToSuperview()
-//			$0.bottom.equalTo(chattingView.snp.top)
-			$0.edges.equalToSuperview()
-		}
-		
-		bottomView.snp.makeConstraints {
-			$0.bottom.equalToSuperview()
-			$0.leading.trailing.top.equalTo(chattingView)
+			$0.bottom.equalTo(chattingView.snp.top)
+			$0.leading.trailing.top.equalTo(self.safeAreaLayoutGuide)
 		}
 		
 		chattingView.snp.makeConstraints {
-			$0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+			$0.leading.trailing.bottom.equalToSuperview()
 			$0.height.greaterThanOrEqualTo(60)
 		}
 
 		yourSendButton.snp.makeConstraints {
-			$0.leading.bottom.equalTo(chattingView)
-			$0.width.height.equalTo(60)
+			$0.leading.bottom.equalTo(self.safeAreaLayoutGuide)
+			$0.size.equalTo(60)
 		}
 
 		mySendButton.snp.makeConstraints {
-			$0.trailing.bottom.equalTo(chattingView)
-			$0.width.height.equalTo(60)
+			$0.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+			$0.size.equalTo(60)
 		}
 
 		textView.snp.makeConstraints {
 			$0.leading.equalTo(yourSendButton.snp.trailing).offset(8)
 			$0.trailing.equalTo(mySendButton.snp.leading).offset(-8)
-			$0.bottom.top.equalTo(chattingView).inset(8)
+			$0.top.equalTo(chattingView).inset(8)
+			$0.bottom.equalTo(self.safeAreaLayoutGuide).inset(8)
 			$0.height.equalTo(44)
 		}
 		

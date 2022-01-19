@@ -4,10 +4,12 @@
 //
 //  Created by Hoo's MacBookPro on 2022/01/11.
 //
+//bubbleImageView.image = UIImage(named: "bubbleWhite")?.resizableImage(withCapInsets: UIEdgeInsets(top: 15, left: 19, bottom: 27, right: 20))
 
 import UIKit
 import SnapKit
 
+//오른쪽 말풍선
 class MyTableCell: UITableViewCell {
 	
 	let bubbleImageView = UIImageView()
@@ -26,15 +28,10 @@ class MyTableCell: UITableViewCell {
 	}
 	
 	func configure() {
-		contentView.backgroundColor = .lightGray
 		myChatContent.numberOfLines = 0
-//		bubbleImageView.image = UIImage(named: "bubbleBlack")
-		bubbleImageView.image = UIImage(named: "bubbleWhite")?.resizableImage(withCapInsets: UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20))
-		bubbleImageView.contentMode = .scaleToFill
-//		bubbleImageView.layer.cornerRadius = 5
-//		bubbleImageView.backgroundColor = .green
-//		chatContent.backgroundColor = .cyan
-		
+		bubbleImageView.image = UIImage(named: "myBubble")
+//		?.resizableImage(withCapInsets: UIEdgeInsets(top: 53, left: 17, bottom: 40, right: 45))
+//		bubbleImageView.backgroundColor = .systemCyan
 	}
 	
 	func makeConstraints() {
@@ -43,14 +40,13 @@ class MyTableCell: UITableViewCell {
 		}
 		
 		bubbleImageView.snp.makeConstraints {
-			$0.trailing.top.bottom.equalTo(contentView)
+			$0.trailing.top.bottom.equalTo(contentView).inset(5)
 			$0.leading.greaterThanOrEqualTo(contentView).inset(100)
-//			$0.trailing.equalTo(contentView).inset(100)
 		}
 		
 		myChatContent.snp.makeConstraints {
-			$0.leading.trailing.top.equalTo(bubbleImageView).inset(20)
-			$0.bottom.equalTo(bubbleImageView.snp.bottom).inset(30)
+			$0.trailing.equalTo(bubbleImageView).inset(20)
+			$0.leading.bottom.top.equalTo(bubbleImageView).inset(10)
 		}
 		
 	}

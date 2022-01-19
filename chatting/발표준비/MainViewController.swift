@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainViewController: BaseViewController {
 	
@@ -50,31 +51,20 @@ class MainViewController: BaseViewController {
 	}
 	
 	@objc func yourSendButtonClicked() {
+		print(#function)
 		viewModel.yourSendButtonClicked(message: mainView.textView.text!)
 		mainView.mainTableView.reloadData()
 	}
 	
 	@objc func keyboardShow(notification: NSNotification) {
-		print(#function)
-		
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
-			print(keyboardSize.height)
-			print(self.mainView.chattingView.frame.origin.y)
-			self.view.frame.origin.y = 0 - keyboardHeight
-//			self.mainView.bottomView.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height+view.safeAreaInsets.bottom)
-//			+view.safeAreaInsets.bottom
-//			self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: keyboardSize.height+60-view.safeAreaInsets.bottom)
-//			mainView.mainTableView.tableFooterView = mainView.footerView
+			self.mainView.chattingView.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
 		}
 	}
 	
 	@objc func keyboardHide(notification: NSNotification) {
-		print(#function)
-		self.view.frame.origin.y = 0
-//		self.mainView.bottomView.transform = .identity
-//		self.mainView.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
-//		mainView.mainTableView.tableFooterView = mainView.footerView
+		self.mainView.chattingView.transform = .identity
 	}
 	
 	@objc func keyboardDismiss() {

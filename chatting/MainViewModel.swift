@@ -19,6 +19,5 @@ class MainViewModel {
 	func yourSendButtonClicked(message: String) {
 		let newChat = Chat(chat: message, date: .now, mine: false)
 		chats.value.append(newChat)
-	
 	}
 }

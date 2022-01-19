@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE51594C2796BCDF00E2CFBD /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51594B2796BCDF00E2CFBD /* KeyboardManager.swift */; };
 		FE87E914278D9750007A9981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E913278D9750007A9981 /* AppDelegate.swift */; };
 		FE87E916278D9750007A9981 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E915278D9750007A9981 /* SceneDelegate.swift */; };
 		FE87E918278D9750007A9981 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87E917278D9750007A9981 /* MainViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE51594B2796BCDF00E2CFBD /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		FE87E910278D9750007A9981 /* chatting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE87E913278D9750007A9981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE87E915278D9750007A9981 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,18 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		FE51594D2797426C00E2CFBD /* 발표준비 */ = {
+			isa = PBXGroup;
+			children = (
+				FE87E917278D9750007A9981 /* MainViewController.swift */,
+				FE87E927278D9837007A9981 /* MyTableCell.swift */,
+				FE87E929278D983F007A9981 /* YourTableCell.swift */,
+				FE87E92E278D9891007A9981 /* MainView.swift */,
+			);
+			name = "발표준비";
+			path = "발표준비";
+			sourceTree = "<group>";
+		};
 		FE87E907278D9750007A9981 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				FE87E915278D9750007A9981 /* SceneDelegate.swift */,
-				FE87E917278D9750007A9981 /* MainViewController.swift */,
+				FE51594D2797426C00E2CFBD /* 발표준비 */,
 				FE87E94627900B52007A9981 /* MainModel.swift */,
 				FE87E94827900F5E007A9981 /* MainViewModel.swift */,
-				FE87E927278D9837007A9981 /* MyTableCell.swift */,
-				FE87E929278D983F007A9981 /* YourTableCell.swift */,
-				FE87E92E278D9891007A9981 /* MainView.swift */,
+				FE51594B2796BCDF00E2CFBD /* KeyboardManager.swift */,
 				FE26BC952792CED600E92519 /* SoketChatting */,
 				FE26BC962792CEFC00E92519 /* Helper */,
 				FE87E91C278D9751007A9981 /* Assets.xcassets */,
@@ -216,6 +228,7 @@
 				FE87E94527900AB7007A9981 /* Observable.swift in Sources */,
 				FE87E9532790FFD8007A9981 /* SocketModel.swift in Sources */,
 				FE87E957279107B7007A9981 /* Private.swift in Sources */,
+				FE51594C2796BCDF00E2CFBD /* KeyboardManager.swift in Sources */,
 				FE87E94727900B52007A9981 /* MainModel.swift in Sources */,
 				FE87E928278D9837007A9981 /* MyTableCell.swift in Sources */,
 				FE87E95927910A6F007A9981 /* StartViewController.swift in Sources */,

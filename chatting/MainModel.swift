@@ -14,4 +14,3 @@ struct Chat {
 }
 
 typealias Chats = [Chat]
-
