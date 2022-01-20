@@ -45,7 +45,7 @@ class MyTableCell: UITableViewCell {
 		}
 		
 		myChatContent.snp.makeConstraints {
-			$0.trailing.equalTo(bubbleImageView).inset(20)
+			$0.trailing.equalTo(bubbleImageView).inset(25)
 			$0.leading.bottom.top.equalTo(bubbleImageView).inset(10)
 		}
 		

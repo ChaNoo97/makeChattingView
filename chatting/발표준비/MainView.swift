@@ -16,7 +16,7 @@ class MainView: BaseView {
 	let mySendButton = UIButton()
 	let yourSendButton = UIButton()
 	let bottomView = UIView()
-//	let footerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+	let footerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -50,6 +50,7 @@ class MainView: BaseView {
 		mainTableView.snp.makeConstraints {
 			$0.bottom.equalTo(chattingView.snp.top)
 			$0.leading.trailing.top.equalTo(self.safeAreaLayoutGuide)
+//			$0.edges.equalTo(self.safeAreaInsets)
 		}
 		
 		chattingView.snp.makeConstraints {

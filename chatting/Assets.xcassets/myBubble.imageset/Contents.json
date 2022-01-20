@@ -7,6 +7,20 @@
     {
       "filename" : "myBubble@2x.png",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 17,
+          "left" : 14,
+          "right" : 46,
+          "top" : 54
+        },
+        "center" : {
+          "height" : 34,
+          "mode" : "tile",
+          "width" : 73
+        },
+        "mode" : "9-part"
+      },
       "scale" : "2x"
     },
     {

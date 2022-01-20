@@ -31,13 +31,24 @@ class MainViewController: BaseViewController {
 		mainView.mainTableView.rowHeight = UITableView.automaticDimension
 		mainView.mainTableView.estimatedRowHeight = UITableView.automaticDimension
 		
-//		mainView.mainTableView.tableFooterView = mainView.footerView
+		mainView.mainTableView.tableFooterView = mainView.footerView
 		
 		mainView.mySendButton.addTarget(self, action: #selector(mySendButtonClicked), for: .touchUpInside)
 		mainView.yourSendButton.addTarget(self, action: #selector(yourSendButtonClicked), for: .touchUpInside)
 		
-		NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardShow(notification:)),
+			name: UIResponder.keyboardWillChangeFrameNotification,
+			object: nil
+		)
+		
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardHide(notification:)),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil
+		)
 		
 		let tab = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
 		mainView.mainTableView.addGestureRecognizer(tab)
@@ -48,23 +59,38 @@ class MainViewController: BaseViewController {
 		print(#function)
 		viewModel.mySendButtonClicked(message: mainView.textView.text!)
 		mainView.mainTableView.reloadData()
+//		mainView.mainTableView.scrollToRow(at: [0, viewModel.chats.value.count-1], at: .bottom, animated: false)
 	}
 	
 	@objc func yourSendButtonClicked() {
 		print(#function)
 		viewModel.yourSendButtonClicked(message: mainView.textView.text!)
 		mainView.mainTableView.reloadData()
+//		mainView.mainTableView.scrollToRow(at: [0, viewModel.chats.value.count-1], at: .bottom, animated: false)
 	}
 	
 	@objc func keyboardShow(notification: NSNotification) {
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
 			self.mainView.chattingView.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
+			mainView.footerView.frame.size.height = 60 + keyboardHeight
+			mainView.mainTableView.tableFooterView = mainView.footerView
+//			self.mainView.mainTableView.frame.size.height -= keyboardHeight
+			
+		}
+		if viewModel.chats.value.count != 0 {
+		mainView.mainTableView.scrollToRow(at: [0, viewModel.chats.value.count-1], at: .bottom, animated: true)
 		}
 	}
 	
 	@objc func keyboardHide(notification: NSNotification) {
-		self.mainView.chattingView.transform = .identity
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
+			self.mainView.chattingView.transform = .identity
+			mainView.footerView.frame.size.height = 60
+			mainView.mainTableView.tableFooterView = mainView.footerView
+//		self.mainView.mainTableView.frame.size.height += keyboardHeight
+		}
 	}
 	
 	@objc func keyboardDismiss() {
